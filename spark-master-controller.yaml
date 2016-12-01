@@ -1,0 +1,31 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: spark-master-controller
+  namespace: spark-jupyter
+spec:
+  replicas: 1
+  selector:
+    component: spark-master
+  template:
+    metadata:
+      labels:
+        component: spark-master
+    spec:
+      containers:
+        - name: spark-master
+          image: sahandha/spark:test
+          command: ["/start-master"]
+          ports:
+            - containerPort: 7077
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: "/mnt/nfs"
+              name: nfsvol
+          resources:
+            requests:
+              cpu: 100m
+      volumes:
+        - name: nfsvol
+          persistentVolumeClaim:
+            claimName: spark-master-nfs

@@ -1,0 +1,30 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: spark-worker-controller
+  namespace: spark-jupyter
+spec:
+  replicas: 2
+  selector:
+    component: spark-worker
+  template:
+    metadata:
+      labels:
+        component: spark-worker
+    spec:
+      containers:
+        - name: spark-worker
+          image: sahandha/spark:test
+          command: ["/start-worker"]
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+            - mountPath: /mnt/nfs
+              name: nfsvol
+          resources:
+            requests:
+              cpu: 100m
+      volumes:
+        - name: nfsvol
+          persistentVolumeClaim:
+            claimName: spark-worker-nfs
