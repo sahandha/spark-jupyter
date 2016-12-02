@@ -6,7 +6,7 @@ Set up a spark cluster managed by kubernetes, and a jupyter notebook frontend.
 
 #### Notes:
 
-1) You should do these steps in the order they are written. Make sure the process is complete before you move on to the other step. For example when you create the sparm-master-controller, wait for the pod to pull the container image and become fully operational before you create the service for it. 
+1) You should do these steps in the order they are written. Make sure each process is complete before you move on to the other step. For example when you create the spark-master-controller, wait for the pod to pull the container image and become fully operational before you create the service for it. 
 
 2) In all the `*-nfs.yaml` files, make sure you put in the ip address of your nfs server.
 
