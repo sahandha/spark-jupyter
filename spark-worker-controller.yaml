@@ -4,7 +4,7 @@ metadata:
   name: spark-worker-controller
   namespace: spark-jupyter
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     component: spark-worker
   template:

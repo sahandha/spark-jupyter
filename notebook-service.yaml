@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jupyter-notebook
+  namespace: spark-jupyter
+spec:
+  ports:
+    - port: 8888
+      targetPort: 8888
+      nodePort: 30001
+  selector:
+    component: jupyter-notebook
+  type: NodePort
+

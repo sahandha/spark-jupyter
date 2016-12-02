@@ -13,7 +13,7 @@ spec:
         component: jupyter-notebook
     spec:
       containers:
-        - name: jupyter-notebool
+        - name: jupyter-notebook
           image: sahandha/jupyter
           ports:
             - containerPort: 8888 
