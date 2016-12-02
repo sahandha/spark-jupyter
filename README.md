@@ -10,18 +10,16 @@ Set up a spark cluster managed by kubernetes, and a jupyter notebook frontend.
 
 2) In all the `*-nfs.yaml` files, make sure you put in the ip address of your nfs server.
 
-- kubectl create -f namespace-spark-cluster.yaml
+#### kubect commands:
 
+- kubectl create -f namespace-spark-cluster.yaml
 - kubectl create -f spark-master-nfs.yaml
 - kuebctl create -f spark-master-controller.yaml
 - kubectl create -f spark-master-service.yaml
-
 - kubectl create -f spark-ui-controller.yaml
 - kubectl create -f spark-ui-service.yaml
-
 - kubectl create -f spark-worker-nfs.yaml
 - kubectl create -f spark-worker-controller.yaml
-
 - kubectl create -f notebook-nfs.yaml
 - kubectl create -f notebook-controller.yaml
 - kubectl create -f notebook-service.yaml
