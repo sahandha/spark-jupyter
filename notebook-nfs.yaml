@@ -10,7 +10,7 @@ spec:
     - ReadWriteMany
   nfs:
     server: 10.0.0.3
-    path: "/mnt/nfs"
+    path: "/external/spark-jupyter"
 
 ---
 kind: PersistentVolumeClaim

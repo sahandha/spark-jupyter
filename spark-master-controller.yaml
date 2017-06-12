@@ -20,7 +20,7 @@ spec:
             - containerPort: 7077
             - containerPort: 8080
           volumeMounts:
-            - mountPath: "/mnt/nfs"
+            - mountPath: "/external/spark-jupyter"
               name: nfsvol
           resources:
             requests:

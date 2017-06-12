@@ -14,7 +14,7 @@ Set up a spark cluster managed by kubernetes, and a jupyter notebook frontend.
 
 - kubectl create -f namespace-spark-cluster.yaml
 - kubectl create -f spark-master-nfs.yaml
-- kuebctl create -f spark-master-controller.yaml
+- kubectl create -f spark-master-controller.yaml
 - kubectl create -f spark-master-service.yaml
 - kubectl create -f spark-ui-controller.yaml
 - kubectl create -f spark-ui-service.yaml
