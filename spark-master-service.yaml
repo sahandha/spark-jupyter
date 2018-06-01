@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: spark-master
-  namespace: spark-jupyter
+  namespace: spark
 spec:
   ports:
     - port: 7077

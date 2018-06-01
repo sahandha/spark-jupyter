@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: jupyter-notebook
-  namespace: spark-jupyter
+  namespace: spark
 spec:
   ports:
     - port: 8888

@@ -2,7 +2,7 @@ kind: ReplicationController
 apiVersion: v1
 metadata:
   name: spark-ui-proxy-controller
-  namespace: spark-jupyter
+  namespace: spark
 spec:
   replicas: 1
   selector:
@@ -15,6 +15,7 @@ spec:
       containers:
         - name: spark-ui-proxy
           image: sahandha/spark-ui-proxy
+          imagePullPolicy: Never
           ports:
             - containerPort: 80
           resources:

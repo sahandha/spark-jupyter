@@ -2,7 +2,7 @@ kind: ReplicationController
 apiVersion: v1
 metadata:
   name: notebook-controller
-  namespace: spark-jupyter
+  namespace: spark
 spec:
   replicas: 1
   selector:
@@ -18,7 +18,7 @@ spec:
           ports:
             - containerPort: 8888 
           volumeMounts:
-            - mountPath: /external/spark-jupyter
+            - mountPath: /external/spark
               name: nfsvol
           resources:
             requests:

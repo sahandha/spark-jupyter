@@ -2,25 +2,25 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: spark-worker-nfs
-  namespace: spark-jupyter
+  namespace: spark
 spec:
   capacity:
-    storage: 5Gi
+    storage: 20Gi
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 10.0.0.3
-    path: "/external/spark-jupyter"
+    server: 10.103.231.245
+    path: "/exports/isoforest"
 
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: spark-worker-nfs
-  namespace: spark-jupyter
+  namespace: spark
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 5Gi
+      storage: 20Gi

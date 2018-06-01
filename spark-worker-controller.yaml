@@ -2,7 +2,7 @@ kind: ReplicationController
 apiVersion: v1
 metadata:
   name: spark-worker-controller
-  namespace: spark-jupyter
+  namespace: spark
 spec:
   replicas: 4
   selector:
@@ -14,12 +14,13 @@ spec:
     spec:
       containers:
         - name: spark-worker
-          image: sahandha/spark:test
+          image: sahandha/spark:kube
+          imagePullPolicy: Never
           command: ["/start-worker"]
           ports:
             - containerPort: 8081
           volumeMounts:
-            - mountPath: /mnt/nfs
+            - mountPath: /external/spark-jupyter
               name: nfsvol
           resources:
             requests:
